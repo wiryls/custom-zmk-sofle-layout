@@ -27,7 +27,7 @@ layers:
   - O
   - P
   - {t: \, s: '|'}
-  - FUNCTION
+  - FUNC
   - A
   - S
   - D
@@ -65,7 +65,7 @@ layers:
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
-  FUNCTION:
+  FUNC:
   - $$mdi:keyboard-esc$$
   - F1
   - F2
