@@ -31,14 +31,6 @@
         };
     };
 
-    encoder_scroll: encoder_scroll {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-        label = "ENCODER_SCROLL";
-    };
-
     encoder_brightness: encoder_brightness {
         compatible = "zmk,behavior-sensor-rotate";
         label = "ENCODER_BRIGHTNESS";
@@ -53,55 +45,46 @@
         bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
     };
 
-    morph_mouse_click: morph_mouse_click {
-        compatible = "zmk,behavior-mod-morph";
-        label = "MORPH_MOUSE_CLICK";
-        bindings = <&mkp LCLK>, <&mkp RCLK>;
-
-        #binding-cells = <0>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         default {
             bindings = <
-&kp GRAVE   &kp N1        &kp N2        &kp N3     &kp N4     &kp N5              &mmv MOVE_UP        &kp N6             &kp N7     &kp N8          &kp N9          &kp N0           &kp BACKSPACE
-&kp TAB     &kp Q         &kp W         &kp E      &kp R      &kp T               &mmv MOVE_DOWN      &kp Y              &kp U      &kp I           &kp O           &kp P            &kp BSLH
-&mo 1       &kp A         &kp S         &kp D      &kp F      &kp G               &mmv MOVE_LEFT      &kp H              &kp J      &kp K           &kp L           &kp SEMI         &kp SQT
-&kp LSHFT   &kp Z         &kp X         &kp C      &kp V      &kp B               &mmv MOVE_RIGHT     &kp N              &kp M      &kp UP_ARROW    &kp COMMA       &kp PERIOD       &kp SLASH
-&kp C_MUTE  &kp LEFT_ALT  &kp LEFT_GUI  &kp LCTRL  &kp SPACE  &kp LEFT_BRACKET    &morph_mouse_click  &kp RIGHT_BRACKET  &kp ENTER  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&kp GRAVE   &kp N1        &kp N2        &kp N3     &kp N4     &kp N5       &mmv MOVE_UP     &kp N6     &kp N7     &kp N8          &kp N9          &kp N0           &kp BACKSPACE
+&kp TAB     &kp Q         &kp W         &kp E      &kp R      &kp T        &mmv MOVE_DOWN   &kp Y      &kp U      &kp I           &kp O           &kp P            &kp BSLH
+&mo 1       &kp A         &kp S         &kp D      &kp F      &kp G        &mmv MOVE_LEFT   &kp H      &kp J      &kp K           &kp L           &kp SEMI         &kp SQT
+&kp LSHFT   &kp Z         &kp X         &kp C      &kp V      &kp B        &mmv MOVE_RIGHT  &kp N      &kp M      &kp UP_ARROW    &kp COMMA       &kp PERIOD       &kp SLASH
+&kp C_MUTE  &kp LEFT_ALT  &kp LEFT_GUI  &kp LCTRL  &kp SPACE  &kp MINUS    &mkp LCLK        &kp EQUAL  &kp ENTER  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
             >;
 
             sensor-bindings = <&encoder_volume>;
-            display-name = "MAIN";
+            display-name = "🌚";
         };
 
         function {
             bindings = <
-&kp ESCAPE  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5       &trans  &kp F6     &kp F7  &kp F8       &kp F9         &kp F10  &kp DELETE
-&mo 2       &kp F11  &kp F12  &trans  &trans  &trans       &trans  &trans     &trans  &trans       &trans         &trans   &trans
-&trans      &trans   &trans   &trans  &trans  &trans       &trans  &trans     &trans  &trans       &trans         &trans   &trans
-&trans      &trans   &trans   &trans  &trans  &trans       &trans  &trans     &trans  &kp PAGE_UP  &trans         &trans   &kp INSERT
-&mkp MCLK   &trans   &trans   &trans  &trans  &kp MINUS    &trans  &kp EQUAL  &trans  &kp HOME     &kp PAGE_DOWN  &kp END
+&kp ESCAPE  &kp F1   &kp F2   &kp F3  &kp F4            &kp F5            &msc SCROLL_UP     &kp F6           &kp F7             &kp F8       &kp F9         &kp F10  &kp DELETE
+&mo 2       &kp F11  &kp F12  &trans  &trans            &trans            &msc SCROLL_DOWN   &trans           &trans             &trans       &trans         &trans   &trans
+&trans      &trans   &trans   &trans  &kp LEFT_BRACKET  &kp LEFT_BRACE    &msc SCROLL_LEFT   &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &trans       &trans         &trans   &trans
+&trans      &trans   &trans   &trans  &trans            &trans            &msc SCROLL_RIGHT  &trans           &trans             &kp PAGE_UP  &trans         &trans   &kp INSERT
+&mkp MCLK   &trans   &trans   &trans  &trans            &trans            &mkp RCLK          &trans           &trans             &kp HOME     &kp PAGE_DOWN  &kp END
             >;
 
-            display-name = "FUNC";
-            sensor-bindings = <&encoder_scroll>;
+            display-name = "FUNCTION";
+            sensor-bindings = <&encoder_volume>;
         };
 
         settings {
             bindings = <
-&out OUT_TOG     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &rgb_ug RGB_SPI    &trans  &trans  &trans  &sys_reset  &bootloader  &soft_off
-&trans           &trans        &trans        &trans        &trans        &trans          &rgb_ug RGB_SPD    &trans  &trans  &trans  &trans      &trans       &trans
-&trans           &trans        &trans        &trans        &trans        &trans          &rgb_ug RGB_EFR    &trans  &trans  &trans  &trans      &trans       &trans
-&bt BT_CLR       &trans        &trans        &trans        &trans        &trans          &rgb_ug RGB_EFF    &trans  &trans  &trans  &trans      &trans       &trans
-&rgb_ug RGB_TOG  &trans        &trans        &trans        &trans        &trans          &ext_power EP_OFF  &trans  &trans  &trans  &trans      &trans
+&out OUT_TOG     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &rgb_ug RGB_SPI    &trans  &trans  &trans     &trans       &trans      &trans
+&trans           &trans        &trans        &trans        &trans        &trans          &rgb_ug RGB_SPD    &trans  &trans  &trans     &trans       &trans      &trans
+&trans           &trans        &trans        &trans        &trans        &trans          &rgb_ug RGB_EFR    &trans  &trans  &trans     &trans       &trans      &trans
+&bt BT_CLR       &trans        &trans        &trans        &trans        &trans          &rgb_ug RGB_EFF    &trans  &trans  &trans     &trans       &trans      &trans
+&rgb_ug RGB_TOG  &sys_reset    &bootloader   &soft_off     &trans        &trans          &ext_power EP_OFF  &trans  &trans  &soft_off  &bootloader  &sys_reset
             >;
 
             sensor-bindings = <&encoder_brightness>;
-            label = "CONF";
+            label = "CONTROL";
         };
     };
 };
