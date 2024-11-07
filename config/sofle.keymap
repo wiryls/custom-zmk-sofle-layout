@@ -58,7 +58,7 @@
             >;
 
             sensor-bindings = <&encoder_volume>;
-            display-name = "🌚";
+            display-name = "MAIN";
         };
 
         function {
