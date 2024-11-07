@@ -70,7 +70,7 @@
 &mkp MCLK   &trans   &trans   &trans  &trans            &trans            &mkp RCLK        &trans           &trans             &kp HOME     &kp PAGE_DOWN  &kp END
             >;
 
-            display-name = "FUNCTION";
+            display-name = "FUNC";
             sensor-bindings = <&encoder_volume>;
         };
 
@@ -84,7 +84,7 @@
             >;
 
             sensor-bindings = <&encoder_brightness>;
-            label = "CONTROL";
+            label = "CONF";
         };
     };
 };
