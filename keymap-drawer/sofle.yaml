@@ -79,7 +79,7 @@ layers:
   - F9
   - F10
   - $$mdi:backspace-reverse-outline$$
-  - settings
+  - CONF
   - F11
   - F12
   - {t: '$$mdi:transfer$$', type: trans}
@@ -93,15 +93,15 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
+  - Gui+ $$mdi:keyboard-space$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '[', s: '{'}
   - '{'
-  - $$mdi:pan-left$$
-  - '}'
-  - {t: ']', s: '}'}
+  - {t: '[', s: '{'}
   - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:pan-left$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: ']', s: '}'}
+  - '}'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -130,7 +130,7 @@ layers:
   - HOME
   - PgDn
   - END
-  settings:
+  CONF:
   - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
