@@ -58,10 +58,10 @@ layers:
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:keyboard-space$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
-  - $$mdi:mouse-left-click-outline$$
   - {t: '-', s: _}
+  - $$mdi:mouse-left-click-outline$$
   - {t: '=', s: +}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
@@ -93,7 +93,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Gui+ $$mdi:keyboard-space$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -122,11 +122,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - Gui+ $$mdi:keyboard-space$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:mouse-right-click-outline$$
   - {t: '[', s: '{'}
+  - $$mdi:mouse-right-click-outline$$
   - {t: ']', s: '}'}
+  - {t: '$$mdi:transfer$$', type: trans}
   - HOME
   - PgDn
   - END
