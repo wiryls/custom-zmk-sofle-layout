@@ -5,7 +5,7 @@ manifest:
     - name: cormoran
       url-base: https://github.com/cormoran
   projects:
-    - name: sofle
+    - name: custom_sofle
       url: https://github.com/wiryls/custom-zmk-sofle-layout
       revision: main
     - name: zmk
