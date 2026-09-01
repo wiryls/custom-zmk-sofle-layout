@@ -1,31 +1,14 @@
-# Sofle
+# 自定义 ZMK Sofle 配列
 
-- [中文](README.md)
-- [English](README_EN.md)
+基于上游项目 [`a741725193/zmk-sofle`](https://github.com/a741725193/zmk-sofle)，保留原来的 `Sofle` 设备名称和自定义三层配列，并接入 DYA Studio。
 
-## 更新列表
+## 配置键盘
 
-- 2024/12/21
-  1. 增加zmk-studio支持（只需要刷新左手即可使用）。
-- 2024/10/24
-  1. 修改供电模式，功耗降低。
-  2. 修正RGB供电自动关闭的功能。
-- 2025/3/30 增加睡眠进入时间1小时  增加防抖时间 优化睡眠后功耗 
-- 2025/8/22
-  1. 更新了soft off。当您同时按下 Q、S 和 Z 键并按住 2 秒钟时，键盘将进入深度睡眠状态，无法通过按键唤醒。携带外出时可以使用此功能。激活方式为按一次复位开关。
-  2. 这个月，我还更新了矮轴版本sofle和corne的外壳。框架和底板加厚了，复位开关的开口也进行了调整，可以轻松按下复位开关。目前，我们仍在构思如何设计带有倾斜支架的外壳。如果您仔细检查过 PCB，您会注意到有用于扩展 IO 的预留接口。不知道有没有人能够使用它们，我会尝试一下！
-  3. 右侧键盘屏幕上的GIF动画被移除，这将显著降低右侧键盘的功耗。
+- 使用 [DYA Studio](https://studio.dya.cormoran.works/) 通过 USB 连接键盘，可以运行时修改键位和旋钮行为，并管理蓝牙 Profile。
+- 使用 [ZMK Keymap Editor](https://nickcoutsos.github.io/keymap-editor/) 修改仓库中的默认键位配置。
 
--2026/6/22 键盘支持DYA STUDIO改键了中文用户联系店主索取中文版DYA STUDIO安装包。这个上位机软件改键比ZMK studio更好用。
+DYA Studio 中保存到键盘 Flash 的设置在正常断电和重启后仍然有效，但不会自动回写到本仓库的 `config/sofle.keymap`。
 
-> 请更新最新的固件。
->
+## 默认键位图
 
-## 联系我
-
-如需3D打印的模型文件或者键盘有任何异常和故障，请联系380465425@qq.com
-
-## Sofle键位图
-
-![Sofle键位图](keymap-drawer/eyelash_sofle.svg)
-
+![Sofle 配列图](./keymap-drawer/sofle.svg)

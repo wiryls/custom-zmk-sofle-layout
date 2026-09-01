@@ -5,8 +5,8 @@ manifest:
     - name: cormoran
       url-base: https://github.com/cormoran
   projects:
-    - name: eyelash_sofle
-      url: https://github.com/a741725193/zmk-sofle
+    - name: sofle
+      url: https://github.com/wiryls/custom-zmk-sofle-layout
       revision: main
     - name: zmk
       remote: cormoran
